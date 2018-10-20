@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title> </title>
+</head>
+<body>
+
+</body>
+<script>
+    var x;
+    var arr=[2,4,5,6,7];
+//获取素数
+function get_primes(arr){
+    return arr.filter(function(y){
+        console.log(y);
+        if (y == 1) {
+            return false;
+        }
+        for(var i=2;i<=Math.sqrt(y);i++){
+            if (y%i == 0){
+                return false;
+            }
+        }
+        return true;
+    });
+}
+//测试结果：
+r = get_primes(arr);
+console.log(r);
+</script>
+</html>

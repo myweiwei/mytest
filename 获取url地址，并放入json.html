@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var url="http://vip.qq.com/a.php?a=1&b=3&c=4&d=5"//定义参数可以是无限的
+            var arr=url.split("?")[1];           //根据？跟个url
+            var arr2=arr[1].split("&");         //根据&重新分割参数
+            var jsonarr={};                    //定义一个json对象放置url  参数
+            for(var i=0;i<arr2.length;i++){   //循环将参数放到json里面
+              jsonarr[arr2[i].substring(0,1)]=arr2[i].substring(2,3);
+            }
+           /*	console.log(jsonarr[0]);
+            for(var key in jsonarr){
+            	console.log(jsonarr[key]);
+            }*/
+	</script>
+</body>
+</html>

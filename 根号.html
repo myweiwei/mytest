@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+
+</body>
+</html>
+<script type="">
+	var G={
+
+ result:0
+
+ ,sqrt:function(a){
+
+  var x=a;
+
+  for(var i=0;i<=Math.floor(a);i++)
+
+  {
+
+  x=(x+a/x)/2;
+
+  if(x-this.result===0){ //用来减少循环次数
+
+   break;
+
+  }
+
+  this.result=x;
+
+  document.body.innerHTML+="this.result-->"+this.result+"-->X："+x+"<br/>";
+
+  }
+
+ }
+
+};
+console.log(G.sqrt(16))
+
+</script>
