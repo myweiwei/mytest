@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var myObject = {
+        foo: "bar",
+        func: function() {        
+        var self = this;        
+            console.log("outer func:  this.foo = " + this.foo);       
+            console.log("outer func:  self.foo = " + self.foo);
+            (function() {            
+                console.log("inner func:  this.foo = " + this.foo);            
+                console.log("inner func:  self.foo = " + self.foo);
+            }());
+        }
+    };
+    myObject.func();
+</script>
+</html>
+<!-- 在外部函数中， this 和self 两者都指向了 myObject，
+    因此两者都可以正确地引用和访问 foo。
+在内部函数中， this 不再指向 myObject。
+其结果是，this.foo 没有在内部函数中被定义，
+相反，指向到本地的变量self 保持在范围内，并且可以访问。 
+（在ECMA 5之前，在内部函数中的this 将指向全局的 window 对象；
+反之，因为作为ECMA 5，内部函数中的功能this 是未定义的。） -->
